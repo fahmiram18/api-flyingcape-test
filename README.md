@@ -4,13 +4,13 @@ API for E-Learning App
 
 # Installation
 
-Make sure you have Composer, Local Server (XAMPP, MAMP, LARAGON), Postman / Insomnia, and MySQL installed.
+Make sure you have .Net and Microsoft SQL Server installed.
 
 Clone the project 
 
 ```bash
-git clone https://github.com/fahmiram18/flyingcape-test.git
-cd flyingcape-test
+git clone https://github.com/fahmiram18/api-flyingcape-test.git
+cd api-flyingcape-test
 ```
 
 Create database
@@ -20,35 +20,18 @@ CREATE DATABASE `db_flyingcape_test`;
 USE db_flyingcape_test;
 ```
 
-Install Dependencies
+Run Migration and Update Database
 
 ```bash
-composer install
-```
-
-Copy env
-
-```bash
-cp .env.example .env
-```
-
-Generate App Key
-
-```bash
-php artisan key:generate
-```
-
-Run Migration
-
-```bash
-php artisan migrate --seed
+dotnet ef add-migration InitialCreate
+dotnet ef Update-Database
 ```
 
 Start the server
 ```bash
-php artisan serve
+dotnet run
 ```
 
 # Request Collection
 
-Import Flyingcape Test Project.postman_collection.json on Postman/Insomnia to see Request Collection.
+You can see Request Collection when run the app.
